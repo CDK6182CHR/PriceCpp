@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="8,00"
+	Name="PriceCpp"
+	ProjectGUID="{633A6557-509E-3392-8B8A-B95DFBF4B4F0}"
+	Keyword="Qt4VSv1.0">
+	<Platforms>
+		<Platform
+			Name="x64" />
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Release|x64"
+			OutputDirectory="release\"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			ConfigurationType="1"
+			IntermediateDirectory="release\"
+			UseOfMfc="0">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories=".,..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include,..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtWidgets,..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtGui,..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtANGLE,..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtCore,release,\include,..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\mkspecs\win32-msvc"
+				AdditionalOptions="-w34100 -w34189 -w44996"
+				AssemblerListingLocation="release\"
+				DebugInformationFormat="0"
+				ExceptionHandling="1"
+				GeneratePreprocessedFile="0"
+				ObjectFile="release\"
+				Optimization ="2"
+				PreprocessorDefinitions="_WINDOWS,UNICODE,_UNICODE,WIN32,WIN64,QT_DEPRECATED_WARNINGS,QT_NO_DEBUG,QT_WIDGETS_LIB,QT_GUI_LIB,QT_CORE_LIB,NDEBUG"
+				ProgramDataBaseFileName=""
+				RuntimeLibrary="2"
+				SuppressStartupBanner="true"
+				TreatWChar_tAsBuiltInType="true"
+				WarningLevel="3" />
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="D:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\qtmain.lib shell32.lib D:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\Qt5Widgets.lib D:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\Qt5Gui.lib D:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\Qt5Core.lib"
+				AdditionalLibraryDirectories="D:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib,C:\openssl\lib,C:\Utils\my_sql\mysql-5.6.11-winx64\lib,C:\Utils\postgresql\pgsql\lib,$(QTDIR)\lib"
+				AdditionalOptions="&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot;"
+				DataExecutionPrevention="true"
+				GenerateDebugInformation="false"
+				IgnoreImportLibrary="true"
+				LinkIncremental="1"
+				LinkTimeCodeGeneration="0"
+				OutputFile="$(OutDir)\PriceCpp.exe"
+				ProgramDatabaseFile=""
+				RandomizedBaseAddress="true"
+				SubSystem="2"
+				SuppressStartupBanner="true" />
+			<Tool
+				Name="VCManifestTool" />
+			<Tool
+				Name="VCMIDLTool"
+				DefaultCharType="0"
+				EnableErrorChecks="1"
+				WarningLevel="0" />
+			<Tool
+				Name="VCPostBuildEventTool" />
+			<Tool
+				Name="VCPreBuildEventTool" />
+			<Tool
+				Name="VCPreLinkEventTool" />
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_WINDOWS,UNICODE,_UNICODE,WIN32,WIN64,QT_DEPRECATED_WARNINGS,QT_NO_DEBUG,QT_WIDGETS_LIB,QT_GUI_LIB,QT_CORE_LIB" />
+			<DeploymentTool
+				RemoteDirectory="%CSIDL_PROGRAM_FILES%\PriceCpp"
+				RegisterOutput="0"
+				AdditionalFiles="Qt5Widgets.dll|D:\QT\QT5.11.1\5.11.1\MSVC2017_64\bin|%CSIDL_PROGRAM_FILES%\PriceCpp|0;Qt5Gui.dll|D:\QT\QT5.11.1\5.11.1\MSVC2017_64\bin|%CSIDL_PROGRAM_FILES%\PriceCpp|0;Qt5Core.dll|D:\QT\QT5.11.1\5.11.1\MSVC2017_64\bin|%CSIDL_PROGRAM_FILES%\PriceCpp|0;" />
+		</Configuration>
+		<Configuration
+			Name="Debug|x64"
+			OutputDirectory="debug\"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			ConfigurationType="1"
+			IntermediateDirectory="debug\"
+			UseOfMfc="0">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories=".,..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include,..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtWidgets,..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtGui,..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtANGLE,..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\include\QtCore,debug,\include,..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\mkspecs\win32-msvc"
+				AdditionalOptions="-w34100 -w34189 -w44996"
+				AssemblerListingLocation="debug\"
+				DebugInformationFormat="3"
+				ExceptionHandling="1"
+				GeneratePreprocessedFile="0"
+				ObjectFile="debug\"
+				Optimization ="4"
+				PreprocessorDefinitions="_WINDOWS,UNICODE,_UNICODE,WIN32,WIN64,QT_DEPRECATED_WARNINGS,QT_WIDGETS_LIB,QT_GUI_LIB,QT_CORE_LIB"
+				ProgramDataBaseFileName=""
+				RuntimeLibrary="3"
+				SuppressStartupBanner="true"
+				TreatWChar_tAsBuiltInType="true"
+				WarningLevel="3" />
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="D:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\qtmaind.lib shell32.lib D:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\Qt5Widgetsd.lib D:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\Qt5Guid.lib D:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib\Qt5Cored.lib"
+				AdditionalLibraryDirectories="D:\QT\QT5.11.1\5.11.1\MSVC2017_64\lib,C:\openssl\lib,C:\Utils\my_sql\mysql-5.6.11-winx64\lib,C:\Utils\postgresql\pgsql\lib,$(QTDIR)\lib"
+				AdditionalOptions="&quot;/MANIFESTDEPENDENCY:type=&apos;win32&apos; name=&apos;Microsoft.Windows.Common-Controls&apos; version=&apos;6.0.0.0&apos; publicKeyToken=&apos;6595b64144ccf1df&apos; language=&apos;*&apos; processorArchitecture=&apos;*&apos;&quot;"
+				DataExecutionPrevention="true"
+				GenerateDebugInformation="true"
+				IgnoreImportLibrary="true"
+				LinkTimeCodeGeneration="0"
+				OutputFile="$(OutDir)\PriceCpp.exe"
+				ProgramDatabaseFile=""
+				RandomizedBaseAddress="true"
+				SubSystem="2"
+				SuppressStartupBanner="true" />
+			<Tool
+				Name="VCManifestTool" />
+			<Tool
+				Name="VCMIDLTool"
+				DefaultCharType="0"
+				EnableErrorChecks="1"
+				WarningLevel="0" />
+			<Tool
+				Name="VCPostBuildEventTool" />
+			<Tool
+				Name="VCPreBuildEventTool" />
+			<Tool
+				Name="VCPreLinkEventTool" />
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_WINDOWS,UNICODE,_UNICODE,WIN32,WIN64,QT_DEPRECATED_WARNINGS,QT_WIDGETS_LIB,QT_GUI_LIB,QT_CORE_LIB,_DEBUG" />
+			<DeploymentTool
+				RemoteDirectory="%CSIDL_PROGRAM_FILES%\PriceCpp"
+				RegisterOutput="0"
+				AdditionalFiles="Qt5Widgetsd.dll|D:\QT\QT5.11.1\5.11.1\MSVC2017_64\bin|%CSIDL_PROGRAM_FILES%\PriceCpp|0;Qt5Guid.dll|D:\QT\QT5.11.1\5.11.1\MSVC2017_64\bin|%CSIDL_PROGRAM_FILES%\PriceCpp|0;qwindowsd.dll|D:\QT\QT5.11.1\5.11.1\MSVC2017_64\plugins\platforms|%CSIDL_PROGRAM_FILES%\PriceCpp\platforms|0;Qt5Cored.dll|D:\QT\QT5.11.1\5.11.1\MSVC2017_64\bin|%CSIDL_PROGRAM_FILES%\PriceCpp|0;" />
+		</Configuration>
+	</Configurations>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			<File
+				RelativePath="baseprice.cpp" />
+			<File
+				RelativePath="main.cpp" />
+			<File
+				RelativePath="mainwindow.cpp" />
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc;xsd"
+			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File
+				RelativePath="baseprice.h" />
+			<File
+				RelativePath="mainwindow.h">
+				<FileConfiguration
+					Name="Release|x64">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="mainwindow.h;release\moc_predefs.h;D:\QT\QT5.11.1\5.11.1\MSVC2017_64\bin\moc.exe"
+						CommandLine="D:\QT\QT5.11.1\5.11.1\MSVC2017_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_DEPRECATED_WARNINGS -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include release/moc_predefs.h -ID:/QT/QT5.11.1/5.11.1/MSVC2017_64/mkspecs/win32-msvc -ID:/QTProject/PriceCpp -ID:/QT/QT5.11.1/5.11.1/MSVC2017_64/include -ID:/QT/QT5.11.1/5.11.1/MSVC2017_64/include/QtWidgets -ID:/QT/QT5.11.1/5.11.1/MSVC2017_64/include/QtGui -ID:/QT/QT5.11.1/5.11.1/MSVC2017_64/include/QtANGLE -ID:/QT/QT5.11.1/5.11.1/MSVC2017_64/include/QtCore -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\VC98\atl\include&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\VC98\mfc\include&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\VC98\include&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.14.26428\ATLMFC\include&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.14.26428\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt&quot; mainwindow.h -o release\moc_mainwindow.cpp"
+						Description="MOC mainwindow.h"
+						Outputs="release\moc_mainwindow.cpp"
+						Path="D:\QT\QT5.11.1\5.11.1\MSVC2017_64\bin" />
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="mainwindow.h;debug\moc_predefs.h;D:\QT\QT5.11.1\5.11.1\MSVC2017_64\bin\moc.exe"
+						CommandLine="D:\QT\QT5.11.1\5.11.1\MSVC2017_64\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DWIN64 -DQT_DEPRECATED_WARNINGS -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include debug/moc_predefs.h -ID:/QT/QT5.11.1/5.11.1/MSVC2017_64/mkspecs/win32-msvc -ID:/QTProject/PriceCpp -ID:/QT/QT5.11.1/5.11.1/MSVC2017_64/include -ID:/QT/QT5.11.1/5.11.1/MSVC2017_64/include/QtWidgets -ID:/QT/QT5.11.1/5.11.1/MSVC2017_64/include/QtGui -ID:/QT/QT5.11.1/5.11.1/MSVC2017_64/include/QtANGLE -ID:/QT/QT5.11.1/5.11.1/MSVC2017_64/include/QtCore -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\VC98\atl\include&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\VC98\mfc\include&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\VC98\include&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.14.26428\ATLMFC\include&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.14.26428\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt&quot; mainwindow.h -o debug\moc_mainwindow.cpp"
+						Description="MOC mainwindow.h"
+						Outputs="debug\moc_mainwindow.cpp"
+						Path="D:\QT\QT5.11.1\5.11.1\MSVC2017_64\bin" />
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<Filter
+			Name="Generated Files"
+			Filter="cpp;c;cxx;moc;h;def;odl;idl;res;"
+			UniqueIdentifier="{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}">
+			<File
+				RelativePath="debug\moc_mainwindow.cpp">
+				<FileConfiguration
+					Name="Release|x64"
+					ExcludedFromBuild="true" />
+			</File>
+			<File
+				RelativePath="release\moc_mainwindow.cpp">
+				<FileConfiguration
+					Name="Debug|x64"
+					ExcludedFromBuild="true" />
+			</File>
+			<File
+				RelativePath="debug\moc_predefs.h.cbt">
+				<FileConfiguration
+					Name="Release|x64"
+					ExcludedFromBuild="true" />
+				<FileConfiguration
+					Name="Debug|x64">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\mkspecs\features\data\dummy.cpp"
+						CommandLine="cl -Bx&quot;$(QTDIR)\bin\qmake.exe&quot; -nologo -Zc:wchar_t -Zi -MDd -W3 -w34100 -w34189 -w44996 -E ..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\mkspecs\features\data\dummy.cpp 2>NUL >debug\moc_predefs.h"
+						Description="Generate moc_predefs.h"
+						Outputs="debug\moc_predefs.h"
+						Path="." />
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="release\moc_predefs.h.cbt">
+				<FileConfiguration
+					Name="Release|x64">
+					<Tool
+						Name="VCCustomBuildTool"
+						AdditionalDependencies="..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\mkspecs\features\data\dummy.cpp"
+						CommandLine="cl -Bx&quot;$(QTDIR)\bin\qmake.exe&quot; -nologo -Zc:wchar_t -O2 -MD -W3 -w34100 -w34189 -w44996 -E ..\..\QT\QT5.11.1\5.11.1\MSVC2017_64\mkspecs\features\data\dummy.cpp 2>NUL >release\moc_predefs.h"
+						Description="Generate moc_predefs.h"
+						Outputs="release\moc_predefs.h"
+						Path="." />
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|x64"
+					ExcludedFromBuild="true" />
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>
