@@ -12,6 +12,7 @@ enum ThroughType{
 };//通票到底类型
 class ThroughPrice : public Price
 {
+protected:
     int totalMile;
     ThroughType throughType;
     const BasePrice* totalBase;
@@ -26,6 +27,7 @@ public:
     double seatAddPrice()const;  //首程客票差价
     double fastAddPrice()const;  //首程加快差价
     double addPrice()const;  //首程补价合计
+    double directPrice()const;  //首程直达票价合计
     QString typeString()const;
     QString resultString()const;
 };

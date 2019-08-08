@@ -50,7 +50,7 @@ QString Price::typeString() const
 QString Price::resultString() const
 {
     QString priceStr;
-    priceStr.sprintf(" %.2lf元",unionPrice());
+    priceStr.sprintf(" %.2lf",unionPrice());
     return typeString()+priceStr;
 }
 

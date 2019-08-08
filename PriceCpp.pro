@@ -33,7 +33,10 @@ SOURCES += \
     triradios.cpp \
     util.cpp \
     throughprice.cpp \
-    throughwidget.cpp
+    throughwidget.cpp \
+    triradiosv.cpp \
+    visaprice.cpp \
+    visawidget.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -44,7 +47,10 @@ HEADERS += \
     triradios.h \
     util.h \
     throughprice.h \
-    throughwidget.h
+    throughwidget.h \
+    triradiosv.h \
+    visaprice.h \
+    visawidget.h
 
 CONFIG += mobility
 MOBILITY = 

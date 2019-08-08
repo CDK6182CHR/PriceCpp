@@ -21,6 +21,8 @@ MainWindow::MainWindow(QWidget *parent)
     tabWidget->addTab(directWidget,"直达票价");
     throughWidget=new ThroughWidget(&oldList,&newList);
     tabWidget->addTab(throughWidget,"通票票价");
+    visaWidget=new VisaWidget(&oldList,&newList);
+    tabWidget->addTab(visaWidget,"签证票价");
 
     vlayout->addWidget(tabWidget);
     QWidget* widget=new QWidget;
@@ -73,5 +75,6 @@ void MainWindow::readList(PriceList *list, QFile& file)
 void MainWindow::about()
 {
     QMessageBox::about(this,"关于",title+"\n六方会谈 马兴越 mxy0268@qq.com\n保留所有权利"
-                                       "\n结果仅供参考。");
+                                       "\n结果仅供参考。\n"
+                                       "源代码：https://github.com/CDK6182CHR/PriceCpp");
 }

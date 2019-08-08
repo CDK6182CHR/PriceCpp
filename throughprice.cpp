@@ -62,6 +62,11 @@ double ThroughPrice::addPrice() const
     return fastAddPrice()+seatAddPrice()+acPrice()+sleeperPrice();
 }
 
+double ThroughPrice::directPrice() const
+{
+    return Price::unionPrice();
+}
+
 QString ThroughPrice::typeString() const
 {
     return Price::typeString()+"通票";

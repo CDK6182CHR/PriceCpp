@@ -9,7 +9,7 @@ ThroughWidget::ThroughWidget(const PriceList *oldPrice, const PriceList *newPric
     QVBoxLayout* vlayout=new QVBoxLayout;
     QFormLayout* flayout=new QFormLayout;
     throughGroup=new QGroupBox("全程");
-    throughRadios=new TriRadios("普客到底","普快到底","特快到底");
+    throughRadios=new TriRadiosV("普客到底","普快到底","特快到底");
     flayout->addRow("通票等级",throughRadios);
     totalEdit=new QLineEdit;
     totalEdit->setValidator(new QIntValidator(1,6000,this));
@@ -142,7 +142,7 @@ void ThroughWidget::detail()
     dialog->setWindowTitle("详细票价");
     QVBoxLayout* vlayout=new QVBoxLayout;
     QTableWidget* tw=new QTableWidget;
-    tw->setRowCount(9);
+    tw->setRowCount(10);
     tw->setColumnCount(2);
     tw->setEditTriggers(tw->NoEditTriggers);
     QStringList lst;
@@ -157,7 +157,8 @@ void ThroughWidget::detail()
     addTableRow(6,"底票合计",throughPrice.throughFastPrice()+
                 throughPrice.throughSeatPrice(),tw);
     addTableRow(7,"补价合计",throughPrice.addPrice(),tw);
-    addTableRow(8,"联合票价",throughPrice.unionPrice(),tw);
+    addTableRow(8,"首程直达原价",throughPrice.directPrice(),tw);
+    addTableRow(9,"联合票价",throughPrice.unionPrice(),tw);
     vlayout->addWidget(tw);
     QPushButton* btn=new QPushButton("关闭");
     connect(btn,&QPushButton::clicked,dialog,&QDialog::close);

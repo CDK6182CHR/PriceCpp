@@ -4,6 +4,7 @@
 #include <QtWidgets>
 #include "throughprice.h"
 #include "triradios.h"
+#include "triradiosv.h"
 
 class ThroughWidget : public QWidget
 {
@@ -11,7 +12,8 @@ class ThroughWidget : public QWidget
     ThroughPrice throughPrice;
     QLineEdit *resultEdit,*totalEdit,*mileEdit;
     QComboBox *seatCombo;
-    TriRadios *throughRadios,*acRadios,*fastRadios,*discountRadios;
+    TriRadios *acRadios,*fastRadios,*discountRadios;
+    TriRadiosV *throughRadios;
 public:
     explicit ThroughWidget(const PriceList* oldPrice,const PriceList* newPrice,
                            QWidget *parent = nullptr);
