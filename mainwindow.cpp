@@ -19,6 +19,9 @@ MainWindow::MainWindow(QWidget *parent)
     tabWidget=new QTabWidget;
     directWidget=new DirectWidget(&oldList,&newList);
     tabWidget->addTab(directWidget,"直达票价");
+    throughWidget=new ThroughWidget(&oldList,&newList);
+    tabWidget->addTab(throughWidget,"通票票价");
+
     vlayout->addWidget(tabWidget);
     QWidget* widget=new QWidget;
     widget->setLayout(vlayout);

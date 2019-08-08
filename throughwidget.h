@@ -1,0 +1,28 @@
+#ifndef THROUGHWIDGET_H
+#define THROUGHWIDGET_H
+#pragma once
+#include <QtWidgets>
+#include "throughprice.h"
+#include "triradios.h"
+
+class ThroughWidget : public QWidget
+{
+    Q_OBJECT
+    ThroughPrice throughPrice;
+    QLineEdit *resultEdit,*totalEdit,*mileEdit;
+    QComboBox *seatCombo;
+    TriRadios *throughRadios,*acRadios,*fastRadios,*discountRadios;
+public:
+    explicit ThroughWidget(const PriceList* oldPrice,const PriceList* newPrice,
+                           QWidget *parent = nullptr);
+private:
+    void calAllSeats();
+    void addTableRow(int row,QString name,double number,QTableWidget* tw);
+signals:
+
+private slots:
+    void calculate();
+    void detail();
+};
+
+#endif // THROUGHWIDGET_H

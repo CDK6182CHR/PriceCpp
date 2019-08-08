@@ -31,7 +31,9 @@ SOURCES += \
     price.cpp \
     directwidget.cpp \
     triradios.cpp \
-    util.cpp
+    util.cpp \
+    throughprice.cpp \
+    throughwidget.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -40,11 +42,18 @@ HEADERS += \
     price.h \
     directwidget.h \
     triradios.h \
-    util.h
+    util.h \
+    throughprice.h \
+    throughwidget.h
 
 CONFIG += mobility
 MOBILITY = 
 
 RESOURCES += \
     list.qrc
+
+DISTFILES += \
+    Android_source/AndroidManifest.xml
+
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/Android_source
 

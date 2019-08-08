@@ -110,9 +110,9 @@ QString Price::acString()const
 QString Price::seatString()const
 {
     if(seatType>=10)
-        return "软座客";
+        return "软座";
     else
-        return "硬座客";
+        return "硬座";
 }
 
 QString Price::fastString()const
@@ -131,10 +131,10 @@ QString Price::sleeperString()const
     case SeatType::HardSeat:
     case SeatType::SoftSeat:return "";
     case SeatType::SoftSleeperL:
-    case SeatType::HardSleeperL:return "卧(下铺)";
-    case SeatType::HardSleeperM:return "卧(中铺)";
+    case SeatType::HardSleeperL:return "卧(下)";
+    case SeatType::HardSleeperM:return "卧(中)";
     case SeatType::HardSleeperU:
-    case SeatType::SoftSleeperU:return "卧(上铺)";
+    case SeatType::SoftSleeperU:return "卧(上)";
     default:return "错误的类型";
     }
 }

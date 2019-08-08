@@ -23,6 +23,11 @@ DirectWidget::DirectWidget(const PriceList *oldlist,
     mileEdit->setValidator(new QIntValidator(1,6000,this));
     flayout->addRow("里程",mileEdit);
     vlayout->addLayout(flayout);
+
+    resultEdit=new QLineEdit;
+    resultEdit->setFocusPolicy(Qt::NoFocus);
+    vlayout->addWidget(resultEdit);
+
     QPushButton *btnCal,*btnDetail;
     btnCal=new QPushButton("计算");
     btnDetail=new QPushButton("详细");
@@ -32,9 +37,7 @@ DirectWidget::DirectWidget(const PriceList *oldlist,
     hlayout->addWidget(btnCal);
     hlayout->addWidget(btnDetail);
     vlayout->addLayout(hlayout);
-    resultEdit=new QLineEdit;
-    resultEdit->setFocusPolicy(Qt::NoFocus);
-    vlayout->addWidget(resultEdit);
+
     setLayout(vlayout);
 }
 
@@ -116,6 +119,7 @@ void DirectWidget::detail()
     l<<"项目"<<"票价";
     tw->setHorizontalHeaderLabels(l);
     tw->setRowCount(5);
+    tw->setEditTriggers(tw->NoEditTriggers);
     addTableRow(0,"客票",price.seatPrice(),tw);
     addTableRow(1,"加快票",price.speedPrice(),tw);
     addTableRow(2,"空调票",price.acPrice(),tw);

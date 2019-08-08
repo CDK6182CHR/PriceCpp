@@ -10,6 +10,7 @@
 
 class Price
 {
+protected:
     int mile;
     const PriceList* oldList,*newList;//非空表和新空表。
     ACType acType;
@@ -31,7 +32,7 @@ public:
     double speedPrice()const;//加快票价
     double acPrice()const;//空调票价
 
-private:
+protected:
     static double correctPrice(double price);
     QString acString()const;
     QString seatString()const;
