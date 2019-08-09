@@ -96,7 +96,10 @@ void ThroughWidget::calAllSeats()
 void ThroughWidget::addTableRow(int row, QString name, double number, QTableWidget *tw)
 {
     QString numberStr;
-    numberStr.sprintf("%.2lf",number);
+    if(number<1e-6)
+        numberStr="-";
+    else
+        numberStr.sprintf("%.2lf",number);
     tw->setItem(row,0,new QTableWidgetItem(name));
     tw->setItem(row,1,new QTableWidgetItem(numberStr));
 }
@@ -140,6 +143,7 @@ void ThroughWidget::detail()
     calculate();
     QDialog* dialog=new QDialog(this);
     dialog->setWindowTitle("详细票价");
+    dialog->resize(400,600);
     QVBoxLayout* vlayout=new QVBoxLayout;
     QTableWidget* tw=new QTableWidget;
     tw->setRowCount(10);
@@ -166,5 +170,9 @@ void ThroughWidget::detail()
 //    tw->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
 //    dialog->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
     dialog->setLayout(vlayout);
+#ifdef ANDROID
     dialog->showMaximized();
+#else
+    dialog->show();
+#endif
 }

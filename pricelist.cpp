@@ -29,3 +29,32 @@ const BasePrice *PriceList::findMile(int mile) const
     }
     return &list[minmile];
 }
+
+int PriceList::findMileIndex(int mile) const
+{
+    if(mile>6000)
+        return -1;
+    int maxmile=list.length()-1,minmile=0;//在[min,max]范围进行二分查找。
+    int middle1;
+    while(maxmile-minmile>0){
+        middle1=(maxmile+minmile)/2;
+        if(mile<list[middle1].minMileage())
+            maxmile=middle1-1;
+        else if(mile>list[middle1].maxMileage())
+            minmile=middle1+1;
+        else{
+            return middle1;
+        }
+    }
+    return minmile;
+}
+
+const BasePrice &PriceList::operator[](int i) const
+{
+    return list[i];
+}
+
+BasePrice &PriceList::operator [](int i)
+{
+    return list[i];
+}

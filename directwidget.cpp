@@ -68,14 +68,19 @@ void DirectWidget::calAllSeats()
     connect(btn,&QPushButton::clicked,dialog,&QDialog::close);
     layout->addWidget(btn);
     dialog->setLayout(layout);
-    dialog->showMaximized();
+    dialog->show();
 }
 
 void DirectWidget::addTableRow(int row, const QString &name, double num,
                                QTableWidget* tw)
 {
+    QString s;
+    if(num<1e-6)
+        s="-";
+    else
+        s.sprintf("%.2lf",num);
     tw->setItem(row,0,new QTableWidgetItem(name));
-    tw->setItem(row,1,new QTableWidgetItem(QString::number(num,'.',2)));
+    tw->setItem(row,1,new QTableWidgetItem(s));
 }
 
 void DirectWidget::calculate()
@@ -109,6 +114,7 @@ void DirectWidget::detail()
     }
     calculate();
     QDialog* dialog=new QDialog(this);
+    dialog->resize(400,600);
     QVBoxLayout* vlayout=new QVBoxLayout;
     dialog->setWindowTitle("详细票价");
     QTableWidget* tw=new QTableWidget;
@@ -130,5 +136,9 @@ void DirectWidget::detail()
     connect(btn,&QPushButton::clicked,dialog,&QDialog::close);
     vlayout->addWidget(btn);
     dialog->setLayout(vlayout);
+#ifdef ANDROID
     dialog->showMaximized();
+#else
+    dialog->show();
+#endif
 }

@@ -23,6 +23,8 @@ MainWindow::MainWindow(QWidget *parent)
     tabWidget->addTab(throughWidget,"通票票价");
     visaWidget=new VisaWidget(&oldList,&newList);
     tabWidget->addTab(visaWidget,"签证票价");
+    priceListWidget=new PriceListWidget(&oldList,&newList);
+    tabWidget->addTab(priceListWidget,"票价表");
 
     vlayout->addWidget(tabWidget);
     QWidget* widget=new QWidget;

@@ -5,7 +5,6 @@ ThroughPrice::ThroughPrice(const PriceList *oldlist, const PriceList *newlist):
 {
 
 }
-
 void ThroughPrice::setData(int mile, ACType actype, SeatType seattype,
                            FastType fasttype, DiscountType discounttype,
                            int totalmile, ThroughType throughtype)
@@ -48,13 +47,13 @@ double ThroughPrice::seatAddPrice() const
 
 double ThroughPrice::fastAddPrice() const
 {
-    if((int)fastType<=(int)throughType)
-        return 0;
+    double fastAdd;
     const BasePrice* bp=oldList->findMile(mile);
     double fastBase=bp->speedPrice((FastType)(int)throughType);
     if(discountType!=full)
         fastBase=correctPrice(fastBase/2);
-    return speedPrice()-fastBase;
+    fastAdd=speedPrice()-fastBase;
+    return fastAdd>0?fastAdd:0;
 }
 
 double ThroughPrice::addPrice() const

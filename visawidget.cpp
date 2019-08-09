@@ -78,7 +78,10 @@ void VisaWidget::calAllSeats()
 void VisaWidget::addTableRow(int row, const QString &name, double number, QTableWidget *tw)
 {
     QString s;
-    s.sprintf("%.2lf",number);
+    if(number<1e-6)
+        s="-";
+    else
+        s.sprintf("%.2lf",number);
     tw->setItem(row,0,new QTableWidgetItem(name));
     tw->setItem(row,1,new QTableWidgetItem(s));
 }
@@ -131,8 +134,10 @@ void VisaWidget::calculate()
 
 void VisaWidget::detail()
 {
+    calculate();
     QDialog* dialog=new QDialog(this);
     dialog->setWindowTitle("详细票价");
+    dialog->resize(400,600);
     QVBoxLayout* vlayout=new QVBoxLayout;
     QTableWidget* tw=new QTableWidget;
     tw->setColumnCount(2);
@@ -171,5 +176,9 @@ void VisaWidget::detail()
     vlayout->addWidget(btn);
     connect(btn,&QPushButton::clicked,dialog,&QDialog::close);
     dialog->setLayout(vlayout);
+#ifdef ANDROID
     dialog->showMaximized();
+#else
+    dialog->show();
+#endif
 }

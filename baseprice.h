@@ -17,6 +17,7 @@ enum DiscountType{
 };//优惠票类型，允许直接利用full=0。
 
 class Price;
+class PriceListWidget;
 class BasePrice
 {
     int minMile,maxMile; //上下界。均包含
@@ -37,6 +38,7 @@ public:
     double sleeperPrice(SeatType type)const;//卧铺票价，非卧铺返回0
     double speedPrice(FastType type)const;//加快票价
     friend class Price;
+    friend class PriceListWidget;
 };
 
 #endif // BASEPRICE_H
