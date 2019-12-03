@@ -7,6 +7,7 @@
 #include "throughwidget.h"
 #include "visawidget.h"
 #include "pricelistwidget.h"
+#include "milewidget.h"
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -14,9 +15,10 @@ class MainWindow : public QMainWindow
     DirectWidget *directWidget;
     ThroughWidget *throughWidget;
     VisaWidget *visaWidget;
+    MileWidget *mileWidget;
     PriceListWidget *priceListWidget;
     QTabWidget* tabWidget;
-    QString title="票价计算器 V4.1.1 20190809";
+    QString title="票价计算器 V4.2.0 20191203";
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();

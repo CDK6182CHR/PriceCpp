@@ -1,4 +1,6 @@
 #include "visawidget.h"
+#include "dialogwrapper.h"
+#include "milewidget.h"
 
 VisaWidget::VisaWidget(const PriceList *oldlist, const PriceList *newlist, QWidget *parent):
     QWidget(parent),visaPrice(oldlist,newlist)
@@ -10,8 +12,15 @@ VisaWidget::VisaWidget(const PriceList *oldlist, const PriceList *newlist, QWidg
     discountRadios=new TriRadios("全","孩","学");
     flayout->addRow("票种",discountRadios);
     mileEdit=new QLineEdit;
+
     mileEdit->setValidator(new QIntValidator(1,6000,this));
-    flayout->addRow("里程",mileEdit);
+    QHBoxLayout* hlayout=new QHBoxLayout;
+    hlayout->addWidget(mileEdit);
+    QPushButton* btn=new QPushButton("最短路...");
+    connect(btn,&QPushButton::clicked,this,&VisaWidget::calMile);
+    hlayout->addWidget(btn);
+    flayout->addRow("里程",hlayout);
+
     useInputCheck=new QCheckBox("直达票价");
     useInputCheck->setChecked(false);
     inputPriceEdit=new QLineEdit;
@@ -35,7 +44,7 @@ VisaWidget::VisaWidget(const PriceList *oldlist, const PriceList *newlist, QWidg
     resultEdit->setFocusPolicy(Qt::NoFocus);
     vlayout->addWidget(resultEdit);
 
-    QHBoxLayout* hlayout=new QHBoxLayout;
+    hlayout=new QHBoxLayout;
     QPushButton *btnCal,*btnDetail;
     btnCal=new QPushButton("计算");
     hlayout->addWidget(btnCal);
@@ -181,4 +190,17 @@ void VisaWidget::detail()
 #else
     dialog->show();
 #endif
+}
+
+void VisaWidget::calMile()
+{
+    MileWidget* w=new MileWidget;
+    DialogWrapper wrapper(w,this);
+    connect(w,&MileWidget::mileCalculated,mileEdit,&QLineEdit::setText);
+#ifndef ANDROID
+    wrapper.show();
+#else
+    wrapper.showMaximized();
+#endif
+    wrapper.exec();
 }

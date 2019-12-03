@@ -7,6 +7,9 @@ MainWindow::MainWindow(QWidget *parent)
 {
     QFile file1(QString(":/rsc/oldList.txt")),
             file2(QString(":/rsc/newList.txt"));
+#ifndef ANDROID
+    resize(800,geometry().width());
+#endif
     readList(&oldList,file1);
     readList(&newList,file2);
     setWindowTitle(title);
@@ -25,6 +28,8 @@ MainWindow::MainWindow(QWidget *parent)
     tabWidget->addTab(visaWidget,"签证票价");
     priceListWidget=new PriceListWidget(&oldList,&newList);
     tabWidget->addTab(priceListWidget,"票价表");
+    mileWidget=new MileWidget;
+    tabWidget->addTab(mileWidget,"里程计算");
 
     vlayout->addWidget(tabWidget);
     QWidget* widget=new QWidget;

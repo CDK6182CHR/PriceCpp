@@ -32,6 +32,7 @@ private slots:
     void useInputChanged(bool checked);
     void calculate();
     void detail();
+    void calMile();
 };
 
 #endif // VISAWIDGET_H

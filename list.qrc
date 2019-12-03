@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>rsc/newList.txt</file>
         <file>rsc/oldList.txt</file>
+		<file>rsc/adj.txt</file>
     </qresource>
 </RCC>

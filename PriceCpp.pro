@@ -37,7 +37,11 @@ SOURCES += \
     triradiosv.cpp \
     visaprice.cpp \
     visawidget.cpp \
-    pricelistwidget.cpp
+    pricelistwidget.cpp \
+    graph.cpp \
+    crnet.cpp \
+    milewidget.cpp \
+    dialogwrapper.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -52,7 +56,11 @@ HEADERS += \
     triradiosv.h \
     visaprice.h \
     visawidget.h \
-    pricelistwidget.h
+    pricelistwidget.h \
+    graph.h \
+    crnet.h \
+    milewidget.h \
+    dialogwrapper.h
 
 CONFIG += mobility
 MOBILITY = 

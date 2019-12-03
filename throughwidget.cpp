@@ -1,6 +1,7 @@
 #include "throughwidget.h"
 #include "util.h"
-
+#include "milewidget.h"
+#include "dialogwrapper.h"
 ThroughWidget::ThroughWidget(const PriceList *oldPrice, const PriceList *newPrice,
                              QWidget *parent):
     throughPrice(oldPrice,newPrice),QWidget(parent)
@@ -13,7 +14,12 @@ ThroughWidget::ThroughWidget(const PriceList *oldPrice, const PriceList *newPric
     flayout->addRow("通票等级",throughRadios);
     totalEdit=new QLineEdit;
     totalEdit->setValidator(new QIntValidator(1,6000,this));
-    flayout->addRow("全程里程",totalEdit);
+    QHBoxLayout* hlayout=new QHBoxLayout;
+    hlayout->addWidget(totalEdit);
+    QPushButton* btn=new QPushButton("最短路...");
+    connect(btn,&QPushButton::clicked,this,&ThroughWidget::calTotalMile);
+    hlayout->addWidget(btn);
+    flayout->addRow("全程里程",hlayout);
     throughGroup->setLayout(flayout);
     vlayout->addWidget(throughGroup);
 
@@ -32,7 +38,12 @@ ThroughWidget::ThroughWidget(const PriceList *oldPrice, const PriceList *newPric
     flayout->addRow("席别",seatCombo);
     mileEdit=new QLineEdit;
     mileEdit->setValidator(new QIntValidator(1,6000,this));
-    flayout->addRow("首程里程",mileEdit);
+    hlayout=new QHBoxLayout;
+    hlayout->addWidget(mileEdit);
+    btn=new QPushButton("最短路...");
+    connect(btn,&QPushButton::clicked,this,&ThroughWidget::calFirstMile);
+    hlayout->addWidget(btn);
+    flayout->addRow("首程里程",hlayout);
     firstGroup->setLayout(flayout);
     vlayout->addWidget(firstGroup);
 
@@ -40,7 +51,7 @@ ThroughWidget::ThroughWidget(const PriceList *oldPrice, const PriceList *newPric
     resultEdit->setFocusPolicy(Qt::NoFocus);
     vlayout->addWidget(resultEdit);
 
-    QHBoxLayout* hlayout=new QHBoxLayout;
+    hlayout=new QHBoxLayout;
     QPushButton *btnCal,*btnDetail;
     btnCal=new QPushButton("计算");
     connect(btnCal,&QPushButton::clicked,this,&ThroughWidget::calculate);
@@ -175,4 +186,25 @@ void ThroughWidget::detail()
 #else
     dialog->show();
 #endif
+}
+
+void ThroughWidget::calTotalMile()
+{
+    MileWidget* w=new MileWidget;
+    DialogWrapper wrapper(w,this);
+    connect(w,&MileWidget::mileCalculated,totalEdit,&QLineEdit::setText);
+    wrapper.exec();
+}
+
+void ThroughWidget::calFirstMile()
+{
+    MileWidget* w=new MileWidget;
+    DialogWrapper wrapper(w,this);
+    connect(w,&MileWidget::mileCalculated,mileEdit,&QLineEdit::setText);
+#ifndef ANDROID
+    wrapper.show();
+#else
+    wrapper.showMaximized();
+#endif
+    wrapper.exec();
 }

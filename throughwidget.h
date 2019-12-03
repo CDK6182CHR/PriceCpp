@@ -25,6 +25,8 @@ signals:
 private slots:
     void calculate();
     void detail();
+    void calTotalMile();
+    void calFirstMile();
 };
 
 #endif // THROUGHWIDGET_H

@@ -27,6 +27,7 @@ signals:
 public slots:
     void calculate();
     void detail();
+    void calMile();
 };
 
 #endif // DIRECTWIDGET_H

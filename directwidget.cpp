@@ -1,5 +1,8 @@
 #include "directwidget.h"
 #include "util.h"
+#include "milewidget.h"
+#include "dialogwrapper.h"
+
 #include <QDebug>
 DirectWidget::DirectWidget(const PriceList *oldlist,
                            const PriceList *newlist, QWidget *parent):
@@ -21,9 +24,14 @@ DirectWidget::DirectWidget(const PriceList *oldlist,
     flayout->addRow("席别",seatCombo);
     mileEdit=new QLineEdit;
     mileEdit->setValidator(new QIntValidator(1,6000,this));
-    flayout->addRow("里程",mileEdit);
-    vlayout->addLayout(flayout);
+    QHBoxLayout* hlayout=new QHBoxLayout;
+    hlayout->addWidget(mileEdit);
+    QPushButton* btn=new QPushButton("最短路...");
+    connect(btn,&QPushButton::clicked,this,&DirectWidget::calMile);
+    hlayout->addWidget(btn);
+    flayout->addRow("里程",hlayout);
 
+    vlayout->addLayout(flayout);
     resultEdit=new QLineEdit;
     resultEdit->setFocusPolicy(Qt::NoFocus);
     vlayout->addWidget(resultEdit);
@@ -33,7 +41,7 @@ DirectWidget::DirectWidget(const PriceList *oldlist,
     btnDetail=new QPushButton("详细");
     connect(btnCal,&QPushButton::clicked,this,&DirectWidget::calculate);
     connect(btnDetail,&QPushButton::clicked,this,&DirectWidget::detail);
-    QHBoxLayout *hlayout=new QHBoxLayout;
+    hlayout=new QHBoxLayout;
     hlayout->addWidget(btnCal);
     hlayout->addWidget(btnDetail);
     vlayout->addLayout(hlayout);
@@ -141,4 +149,17 @@ void DirectWidget::detail()
 #else
     dialog->show();
 #endif
+}
+
+void DirectWidget::calMile()
+{
+    MileWidget* w=new MileWidget;
+    DialogWrapper wrapper(w,this);
+    connect(w,&MileWidget::mileCalculated,mileEdit,&QLineEdit::setText);
+#ifndef ANDROID
+    wrapper.show();
+#else
+    wrapper.showMaximized();
+#endif
+    wrapper.exec();
 }
