@@ -1,0 +1,84 @@
+
+class data.BasePrice{
+    票价表中的数据类。
+    不是Price的基类！！
+}
+
+class data.PriceList{
+    QList<BasePrice> list;
+    票价表
+    程序中有两个实例
+}
+
+data.PriceList "n" *-- data.BasePrice
+
+class data.Price{
+    const BasePrice* basePrice;
+    直达票价类。
+}
+data.Price "2" --- data.PriceList
+data.Price ... data.BasePrice
+
+class data.ThroughPrice{
+    通票票价类
+}
+data.Price <|-- data.ThroughPrice
+data.ThroughPrice "another" ... data.BasePrice
+
+class data.VisaPrice{
+    签证票价类
+}
+data.Price <|-- data.VisaPrice
+
+class data.Graph<T>{
+    带权有向图模型
+}
+
+class data.CRNet{
+    中国铁路网络模型
+}
+data.Graph <|-- data.CRNet
+
+
+class ui.MainWindow{
+    主窗口类
+}
+
+class ui.DirectWidget{
+    直达票价页
+}
+ui.MainWindow *-- ui.DirectWidget
+ui.DirectWidget *-- data.Price
+
+class ui.ThroughWidget{
+    通票票价页
+}
+ui.MainWindow *-- ui.ThroughWidget
+ui.ThroughWidget *-- data.ThroughPrice
+
+class ui.VisaWidget{
+    签证票价页
+}
+ui.MainWindow *-- ui.VisaWidget
+ui.VisaWidget *-- data.VisaPrice
+
+class ui.PriceListWidget{
+    票价表查看页
+}
+ui.MainWindow *-- ui.PriceListWidget
+ui.PriceListWidget --- data.PriceList
+
+class ui.MileWidget{
+    里程计算
+}
+ui.MainWindow *-- ui.MileWidget
+ui.MileWidget *-- data.CRNet
+
+class ui.DialogWrapper{
+    对话框包装器
+}
+ui.DialogWrapper *-- ui.MileWidget
+
+ui.DirectWidget "uses" --> ui.DialogWrapper
+ui.ThroughWidget "uses" --> ui.DialogWrapper
+ui.VisaWidget "uses" --> ui.DialogWrapper

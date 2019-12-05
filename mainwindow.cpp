@@ -21,11 +21,11 @@ MainWindow::MainWindow(QWidget *parent)
     vlayout->addWidget(btnAbout);
     tabWidget=new QTabWidget;
     directWidget=new DirectWidget(&oldList,&newList);
-    tabWidget->addTab(directWidget,"直达票价");
+    tabWidget->addTab(directWidget,"直达");
     throughWidget=new ThroughWidget(&oldList,&newList);
-    tabWidget->addTab(throughWidget,"通票票价");
+    tabWidget->addTab(throughWidget,"通票");
     visaWidget=new VisaWidget(&oldList,&newList);
-    tabWidget->addTab(visaWidget,"签证票价");
+    tabWidget->addTab(visaWidget,"签证");
     priceListWidget=new PriceListWidget(&oldList,&newList);
     tabWidget->addTab(priceListWidget,"票价表");
     mileWidget=new MileWidget;

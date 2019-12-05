@@ -34,6 +34,11 @@ void MileWidget::calculate()
 {
     const QString& start=startEdit->text();
     const QString& end=endEdit->text();
+    if(start==end){
+        QMessageBox::warning(this,
+             "错误","始发、终到站不能相同！");
+        return;
+    }
     QStringList path;
     int mile=crNet.mileBetween(start,end,path);
     if(mile==-1||mile==CRNet::INF){
