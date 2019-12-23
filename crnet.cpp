@@ -6,11 +6,17 @@
 using namespace std;
 
 const QString CRNet::fileName(":/rsc/adj.txt");
+CRNet*const CRNet::instance=new CRNet;
 
 CRNet::CRNet():
     Graph<QString>(5000),currentSource(-1),currentTarget(-1),currentSsspResult(INF)
 {
     read();
+}
+
+CRNet *CRNet::getInstance()
+{
+    return instance;
 }
 
 int CRNet::mileBetween(const QString &from, const QString &to, QStringList &path)

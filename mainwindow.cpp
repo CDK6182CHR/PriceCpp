@@ -83,5 +83,6 @@ void MainWindow::about()
 {
     QMessageBox::about(this,"关于",title+"\n六方会谈 马兴越 mxy0268@qq.com\n保留所有权利"
                                        "\n结果仅供参考。\n"
-                                       "源代码：https://github.com/CDK6182CHR/PriceCpp");
+//                                       "源代码：https://github.com/CDK6182CHR/PriceCpp"
+                       );
 }

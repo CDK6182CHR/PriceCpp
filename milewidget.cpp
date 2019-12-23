@@ -1,6 +1,8 @@
 #include "milewidget.h"
 
-MileWidget::MileWidget(QWidget *parent) : QWidget(parent)
+
+MileWidget::MileWidget(QWidget *parent):
+    crNet(*(CRNet::getInstance())),QWidget(parent)
 {
     setWindowTitle("里程计算");
     initUI();
@@ -29,6 +31,7 @@ void MileWidget::initUI()
     vlayout->addWidget(pathText);
     setLayout(vlayout);
 }
+
 
 void MileWidget::calculate()
 {

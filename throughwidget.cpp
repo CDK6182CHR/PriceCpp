@@ -193,6 +193,11 @@ void ThroughWidget::calTotalMile()
     MileWidget* w=new MileWidget;
     DialogWrapper wrapper(w,this);
     connect(w,&MileWidget::mileCalculated,totalEdit,&QLineEdit::setText);
+#ifndef ANDROID
+    wrapper.show();
+#else
+    wrapper.showMaximized();
+#endif
     wrapper.exec();
 }
 

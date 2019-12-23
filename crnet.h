@@ -9,8 +9,10 @@ class CRNet : public Graph<QString>
     int currentSource,currentTarget;
     QStringList* currentPath;
     int currentSsspResult;
+    CRNet();//private constructor
+    static CRNet*const instance;
 public:
-    CRNet();
+    static CRNet* getInstance();
     int mileBetween(const QString& from,const QString& to,QStringList& path);
     void read();
     virtual void processSsspResult(int s,int pi[],double mile[])override;

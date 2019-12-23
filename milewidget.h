@@ -16,7 +16,7 @@ public slots:
 private slots:
     void calculate();
 private:
-    CRNet crNet;//默认构造
+    CRNet& crNet;//默认构造
     void initUI();
     QLineEdit *startEdit,*endEdit,*mileEdit;
     QTextBrowser *pathText;
