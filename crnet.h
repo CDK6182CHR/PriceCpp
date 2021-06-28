@@ -14,7 +14,7 @@ class CRNet : public Graph<QString>
 public:
     static CRNet* getInstance();
     int mileBetween(const QString& from,const QString& to,QStringList& path);
-    void read();
+    int read();
     virtual void processSsspResult(int s,int pi[],double mile[])override;
 };
 

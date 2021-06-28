@@ -29,6 +29,8 @@ void MileWidget::initUI()
     QScroller::grabGesture(pathText,QScroller::TouchGesture);
     vlayout->addWidget(new QLabel("经由: "));
     vlayout->addWidget(pathText);
+    pathText->setText(QString("邻接客里表长度：")+
+                QString::number(crNet.getInstance()->getSize()));
     setLayout(vlayout);
 }
 

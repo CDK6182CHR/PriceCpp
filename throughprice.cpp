@@ -25,7 +25,7 @@ double ThroughPrice::throughSeatPrice() const
     if (discountType==full)
         return totalBase->seatPrice(SeatType::HardSeat);
     else
-        return correctPrice(totalBase->seatPrice(SeatType::HardSeat));
+        return correctPrice(totalBase->seatPrice(SeatType::HardSeat)/2);
 }
 
 double ThroughPrice::throughFastPrice() const

@@ -18,7 +18,7 @@ class MainWindow : public QMainWindow
     MileWidget *mileWidget;
     PriceListWidget *priceListWidget;
     QTabWidget* tabWidget;
-    QString title="票价计算器 V4.2.0 20191203";
+    QString title="票价计算器 V4.2.1 20201117";
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();

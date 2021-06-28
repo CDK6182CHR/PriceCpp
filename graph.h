@@ -54,6 +54,7 @@ public:
 		vertexTable = new Vertex<T>*[mxsz]; 
 	}
 	~Graph() { delete[] vertexTable; }
+    inline int getSize()const{return size;}
 	bool insertVertex(T data);
 	bool removeVertex(T data);
 	bool removeVertex(Vertex<T>* vtx);

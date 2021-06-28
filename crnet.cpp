@@ -5,13 +5,14 @@
 
 using namespace std;
 
-const QString CRNet::fileName(":/rsc/adj.txt");
+const QString CRNet::fileName(QString(":/rsc/adj.txt"));
 CRNet*const CRNet::instance=new CRNet;
 
 CRNet::CRNet():
     Graph<QString>(5000),currentSource(-1),currentTarget(-1),currentSsspResult(INF)
 {
     read();
+    qDebug()<<"CRNet vertex count"<<size<<endl;
 }
 
 CRNet *CRNet::getInstance()
@@ -34,18 +35,20 @@ int CRNet::mileBetween(const QString &from, const QString &to, QStringList &path
     return currentSsspResult;
 }
 
-void CRNet::read()
+int CRNet::read()
 {
     QFile file(fileName);
     file.open(QFile::ReadOnly|QFile::Text);
+    QTextStream in(&file);
+    in.setCodec("UTF-8");
     if(!file.isOpen()){
-        qDebug()<<"Fetal: Cannot open file "<<fileName;
-        return;
+        qDebug()<<"Fetal: Cannot open file "<<fileName<<endl;
+        return 1;
     }
-    while(!file.atEnd()){
+    while(!in.atEnd()){
         QString station1,station2,lineName;
         int mile;
-        QString line=file.readLine();
+        QString line=in.readLine();
         QStringList list=line.split(' ');
         if(list.length()!=4){
             qDebug()<<"Invalid mile file data: "<<line<<endl;
@@ -64,6 +67,7 @@ void CRNet::read()
         insertEdge(w,v,mile,lineName);
     }
     file.close();
+    return 0;
 }
 
 void CRNet::processSsspResult(int s,int pi[], double mile[])
