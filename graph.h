@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include<iostream>
 #include<stack>
 
@@ -467,11 +467,10 @@ template<class T>
 inline int Graph<T>::getMin(double * heap, int n)
 {
 	int minIndex=-1; double minCost = INF;
-    for (int i = 0; i < n; i++)
-        if (heap[i] >= 0 && heap[i] <= minCost)
+    for (int i = 0; i < n; i++){
+        if (heap[i] >= 0 && heap[i] <= minCost){
 			minIndex = i, minCost = heap[i];
-    if(minIndex==-1){
-        int x=1;
+        }
     }
 	return minIndex;
 }

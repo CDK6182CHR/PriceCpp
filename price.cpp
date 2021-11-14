@@ -1,4 +1,4 @@
-#include "price.h"
+﻿#include "price.h"
 
 Price::Price()
 {
@@ -49,8 +49,8 @@ QString Price::typeString() const
 
 QString Price::resultString() const
 {
-    QString priceStr;
-    priceStr.sprintf(" %.2lf",unionPrice());
+    QString priceStr="%1";
+    priceStr=priceStr.arg(unionPrice(),0,'f');
     return typeString()+priceStr;
 }
 

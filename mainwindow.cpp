@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+﻿#include "mainwindow.h"
 #include <QFile>
 #include <QDebug>
 
@@ -53,7 +53,7 @@ void MainWindow::readList(PriceList *list, QFile& file)
         QString line=file.readLine();
         QStringList splited=line.split(' ');
         if(splited.length()<11){
-            qDebug()<<"unexpectedLength"<<splited.length()<<line<<endl;
+            qDebug()<<"unexpectedLength"<<splited.length()<<line<<Qt::endl;
             continue;
         }
         int minMile,maxMile;
@@ -81,7 +81,7 @@ void MainWindow::readList(PriceList *list, QFile& file)
 
 void MainWindow::about()
 {
-    QMessageBox::about(this,"关于",title+"\n六方会谈 马兴越 mxy0268@qq.com\n保留所有权利"
+    QMessageBox::about(this,"关于",title+"\n六方会谈 萧迩珀 mxy0268@qq.com\n保留所有权利"
                                        "\n结果仅供参考。\n"
 //                                       "源代码：https://github.com/CDK6182CHR/PriceCpp"
                        );

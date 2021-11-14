@@ -1,4 +1,4 @@
-#ifndef MAINWINDOW_H
+﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QtWidgets>
@@ -18,7 +18,7 @@ class MainWindow : public QMainWindow
     MileWidget *mileWidget;
     PriceListWidget *priceListWidget;
     QTabWidget* tabWidget;
-    QString title="票价计算器 V4.2.1 20201117";
+    QString title="票价计算器 V4.2.2 20211114";
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();

@@ -1,4 +1,4 @@
-#ifndef CRNET_H
+﻿#ifndef CRNET_H
 #define CRNET_H
 #include <QString>
 #include <graph.h>
@@ -10,7 +10,7 @@ class CRNet : public Graph<QString>
     QStringList* currentPath;
     int currentSsspResult;
     CRNet();//private constructor
-    static CRNet*const instance;
+    static std::unique_ptr<CRNet> instance;
 public:
     static CRNet* getInstance();
     int mileBetween(const QString& from,const QString& to,QStringList& path);
